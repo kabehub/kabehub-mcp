@@ -7,7 +7,7 @@ import {
 } from '@modelcontextprotocol/sdk/types.js'
 
 const TOKEN = process.env.KABEHUB_TOKEN
-const BASE_URL = (process.env.KABEHUB_API_URL ?? 'https://kabehub.com').replace(/\/$/, '')
+const BASE_URL = (process.env.KABEHUB_API_URL ?? 'https://www.kabehub.com').replace(/\/$/, '')
 
 async function mcpFetch(path: string, options: RequestInit = {}): Promise<Response> {
   return fetch(`${BASE_URL}${path}`, {
