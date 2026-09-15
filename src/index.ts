@@ -21,7 +21,7 @@ async function mcpFetch(path: string, options: RequestInit = {}): Promise<Respon
 }
 
 const server = new Server(
-  { name: 'kabehub-mcp', version: '0.1.0' },
+  { name: 'kabehub-mcp', version: '0.2.0' },
   { capabilities: { tools: {} } }
 )
 
@@ -35,6 +35,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           title: { type: 'string', description: 'スレッドのタイトル' },
           system_prompt: { type: 'string', description: 'システムプロンプト（任意）' },
+          project_id: { type: 'string', description: 'Project ID（folder_nameより優先。create_project等で取得したcanonical ID）' },
           folder_name: { type: 'string', description: 'フォルダ名（任意）' },
           genre: { type: 'string', description: 'ジャンル（任意）' },
         },
